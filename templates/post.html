@@ -1,0 +1,47 @@
+
+{% load custom_markdown %}
+<!DOCTYPE html>
+<html>
+<head>
+
+
+ <link rel="stylesheet" href="../static/pygment/colorful.css" type="text/css" />
+<link href="/static/1.0.8/iconfont.css" rel="stylesheet" type="text/css" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>seana</title>
+    <link rel="stylesheet" href="/static/1.css" type="text/css" />
+    <link rel="stylesheet" href="/static/pygment/colorful.css" type="text/css">
+
+</head>
+<body background="red" style="background:#000; color:#FFF"> 
+
+{% block content %}
+<div class="" style="background:#000; color:#FFF">
+<div class="bl-20 br-20 ">
+        <section class="post">
+            <header class="post-header">
+                <h1 class="post-title">{{ post.title }}</h1>
+
+                    <p class="post-meta">
+            时间:  {{ post.pub_date|date:"Y M d"}}  <a class="hover" href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>
+                    </p>
+            </header>
+
+                <div class="post-description">
+                    <p>
+                        {{ post.content|safe }}
+                    </p>
+                </div>
+        </section>
+</div>
+</div>
+{% endblock %}
+
+</body>
+</html>
